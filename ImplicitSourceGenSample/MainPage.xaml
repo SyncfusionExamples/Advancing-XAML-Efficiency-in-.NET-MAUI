@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ImplicitSourceGenSample.MainPage"
+    Title="Implicit Sample">
+
+    <VerticalStackLayout Padding="24" Spacing="16">
+        <Label Text=".NET 10 MAUI — Implicit Namespaces + XAML Source-gen"
+               FontSize="18"
+               FontAttributes="Bold" />
+
+        <TagView Text="{Binding Greeting}" />
+    </VerticalStackLayout>
+</ContentPage>
