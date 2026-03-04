@@ -1,41 +1,63 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 
-namespace ImplicitSourceGenSample.Controls;
-
-public class TagView : ContentView
+namespace ImplicitSourceGenSample.Controls
 {
-    public static readonly BindableProperty TextProperty =
-        BindableProperty.Create(nameof(Text), typeof(string), typeof(TagView), default(string));
-
-    public string Text
+    /// <summary>
+    /// A custom pill-shaped tag control that displays text inside a rounded container with customizable binding support.
+    /// </summary>
+    /// <remarks>
+    /// TagView is designed as a lightweight UI element commonly used for labels, categories, chips, or badges. The Text property is bindable and updates the visual label automatically.
+    /// </remarks>
+    public class TagView : ContentView
     {
-        get => (string)GetValue(TextProperty);
-        set => SetValue(TextProperty, value);
-    }
+        /// <summary>
+        /// Identifies the <see cref="Text"/> bindable property.
+        /// </summary>
+        public static readonly BindableProperty TextProperty =
+            BindableProperty.Create(nameof(Text), typeof(string), typeof(TagView), default(string));
 
-    public TagView()
-    {
-        var label = new Label
+        /// <summary>
+        /// Gets or sets the text displayed inside the tag.
+        /// </summary>
+        /// <value>
+        /// A <see cref="string"/> representing the content of the tag.
+        /// </value>
+        public string Text
         {
-            TextColor = Colors.Black,
-            LineBreakMode = LineBreakMode.TailTruncation
-        };
-        label.SetBinding(Label.TextProperty, new Binding(nameof(Text), source: this));
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
+        }
 
-        var border = new Border
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagView"/> class.
+        /// </summary>
+        /// <remarks>
+        /// The control is rendered with a rounded blue background and a label that binds to the <see cref="Text"/> property.
+        /// </remarks>
+        public TagView()
         {
-            Background = new SolidColorBrush(Colors.LightBlue),
-            Stroke = Brush.Transparent,
-            StrokeThickness = 0,
-            Padding = new Thickness(12, 6),
-            StrokeShape = new RoundRectangle
+            var label = new Label
             {
-                CornerRadius = new CornerRadius(12)
-            },
-            Content = label
-        };
+                TextColor = Colors.Black,
+                LineBreakMode = LineBreakMode.TailTruncation
+            };
+            label.SetBinding(Label.TextProperty, new Binding(nameof(Text), source: this));
 
-        Content = border;
+            var border = new Border
+            {
+                Background = new SolidColorBrush(Colors.LightBlue),
+                Stroke = Brush.Transparent,
+                StrokeThickness = 0,
+                Padding = new Thickness(12, 6),
+                StrokeShape = new RoundRectangle
+                {
+                    CornerRadius = new CornerRadius(12)
+                },
+                Content = label
+            };
+
+            Content = border;
+        }
     }
 }
