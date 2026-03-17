@@ -3,9 +3,7 @@
     Title="Implicit Sample">
 
     <VerticalStackLayout Padding="24" Spacing="16">
-        <Label Text=".NET 10 MAUI — Implicit Namespaces + XAML Source-gen"
-               FontSize="18"
-               FontAttributes="Bold" />
+        <Image Source="dotnet_bot.png" HeightRequest="200" WidthRequest="250"/>
 
         <TagView Text="{Binding Greeting}" />
     </VerticalStackLayout>

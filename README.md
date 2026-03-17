@@ -1,4 +1,4 @@
-# Advancing-XAML-Efficiency-in-.NET-MAUI
+# Advancing XAML Efficiency in .NET MAUI Through Implicit Namespaces and Source Generators.
 This sample highlights two major improvements in .NET MAUI 10 that significantly enhance XAML productivity and performance: Implicit/Global XML Namespaces and the .NET MAUI XAML Source Generator.
 
 ## Cleaner, Simpler XAML with Global & Implicit Namespaces
@@ -16,3 +16,9 @@ When combined, these features bring major day‑to‑day advantages:
 * Significantly faster startup and build performance
 * Clearer debugging and earlier validation of issues
 * A smoother, more modern development experience overall
+
+## Troubleshooting
+### Path too long exception
+If you are facing a path too long exception when building this example project, close Visual Studio and rename the repository to a shorter name before building the project.
+
+For a step-by-step procedure, refer to the Advancing XAML Efficiency in .NET MAUI Through Implicit Namespaces and Source Generators Blog.
