@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ImplicitSourceGenSample.MainPage"
+    Title="Implicit Sample">
+
+    <VerticalStackLayout Padding="24" Spacing="16">
+        <Image Source="dotnet_bot.png" HeightRequest="200" WidthRequest="250"/>
+
+        <TagView Text="{Binding Greeting}" />
+    </VerticalStackLayout>
+</ContentPage>
